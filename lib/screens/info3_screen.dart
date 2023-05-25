@@ -1,0 +1,171 @@
+import 'package:flutter/material.dart';
+
+class Info3_screen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFF00496C),
+        body: Padding(
+          padding: EdgeInsets.all(30.0), // establecer los margenes deseados
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  alignment: Alignment.topRight,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/createAc');
+                    },
+                    child: Text(
+                      "Saltar",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Poppins',
+                          fontSize: 16),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "Pangu",
+                  style: TextStyle(
+                      color: Colors.white, fontFamily: 'Pangu', fontSize: 96),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Conoce el estado de ánimo de tu perro con base a sus signos vitales",
+                  style: TextStyle(
+                      fontFamily: 'Poppins', color: Colors.white, fontSize: 16),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(37),
+                  child: Image(
+                    image: AssetImage('images/felicidad.jpeg'),
+                    width: 276,
+                    height: 220,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //boton 1 circular
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/info1');
+                      },
+                      child: Container(
+                        width: 10,
+                        height: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    //Boton 2 circular
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/info2');
+                      },
+                      child: Container(
+                        width: 10,
+                        height: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    //Boton 3 circular
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        width: 17,
+                        height: 17,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  child: Container(
+                    width: 220,
+                    height: 46,
+                    decoration: BoxDecoration(
+                      color: Color(0XFF25B8D9),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Iniciar Sesión",
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 16,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/createAc');
+                  },
+                  child: Container(
+                    width: 220,
+                    height: 46,
+                    decoration: BoxDecoration(
+                      color: Color(0XFF25B8D9),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Crear Cuenta",
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 16,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ));
+  }
+}
