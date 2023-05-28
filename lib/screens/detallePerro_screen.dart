@@ -36,6 +36,7 @@ class DetallePerro_screen extends StatelessWidget {
           body: Column(
             children: [
               //API DE GOOGLE MAPS
+
               Container(
                 width: 700,
                 height: 340,

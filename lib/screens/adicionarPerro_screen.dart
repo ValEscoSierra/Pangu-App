@@ -84,11 +84,11 @@ class _AdicionarPerroScreenState extends State<AdicionarPerro_screen> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          _changePhoto('images/criollo.jpg');
+                          _changePhoto('images/Nylla.jpeg');
                           Navigator.pop(context);
                         },
                         child: CircleAvatar(
-                          backgroundImage: AssetImage('images/criollo.jpg'),
+                          backgroundImage: AssetImage('images/Nylla.jpeg'),
                           radius: 50,
                         ),
                       ),
