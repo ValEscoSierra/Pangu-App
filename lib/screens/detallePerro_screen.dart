@@ -1,7 +1,61 @@
+import 'dart:async';
+
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dog.dart';
 
-class DetallePerro_screen extends StatelessWidget {
+class DetallePerro_screen extends StatefulWidget {
+  @override
+  State<DetallePerro_screen> createState() => _DetallePerro_screen();
+}
+
+class _DetallePerro_screen extends State<DetallePerro_screen> {
+  final Completer<GoogleMapController> _controller = Completer();
+
+  double Lat = 4.7006648;
+  double Long = -74.0344053;
+
+  Future<void> getUbicaciones() async {
+    GoogleMapController googleMapController = await _controller.future;
+    DatabaseReference starCountRef = FirebaseDatabase.instance.ref('pangu');
+    starCountRef.onValue.listen((DatabaseEvent event) {
+      final data = event.snapshot.value;
+      print(data.runtimeType); // Imprime el tipo de dato de 'data'
+      print(data); // Imprime el contenido de 'data'
+
+      if (data != null && data is Map<Object?, Object?>) {
+        // Acceder al valor de "Long" en data
+        String longitud = data['Long']?.toString() ?? "";
+        // Acceder al valor de "Lat" en data
+        String latitud = data['Lat']?.toString() ?? "";
+
+        print("Longitud: $longitud");
+        print("Latitud: $latitud");
+
+        Lat = double.parse(latitud);
+        Long = double.parse(longitud);
+
+        googleMapController.animateCamera(
+            CameraUpdate.newCameraPosition(
+                CameraPosition(
+                    zoom: 13.5,
+                    target: LatLng(Lat, Long)
+                )
+            )
+        );
+
+        setState(() { });
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    getUbicaciones();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     DogManager dogManager = DogManager();
@@ -36,12 +90,25 @@ class DetallePerro_screen extends StatelessWidget {
           body: Column(
             children: [
               //API DE GOOGLE MAPS
-
               Container(
                 width: 700,
-                height: 340,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
+                height: 441,
+                child:
+                Lat == null
+                    ? const Center(child: Text("Loading"))
+                    : GoogleMap(
+                  initialCameraPosition: CameraPosition(
+                    target: LatLng(Lat, Long),
+                    zoom: 10,
+                  ),
+                  markers: {
+                    Marker(
+                        markerId: const MarkerId("Ubicacion"),
+                        position: LatLng(Lat, Long))
+                  },
+                  onMapCreated: (MapController){
+                    _controller.complete(MapController);
+                  },
                 ),
               ),
 

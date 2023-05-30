@@ -1,10 +1,22 @@
+import 'dart:async';
+
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:i_am_rich/screens/detallePerro_screen.dart';
 import 'package:i_am_rich/screens/home_screen.dart';
 import 'dog.dart';
 import 'package:provider/provider.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Ubicacion_screen extends StatelessWidget {
+class Ubicacion_screen extends StatefulWidget {
+  @override
+  State<Ubicacion_screen> createState() => _Ubicacion_screen();
+}
+
+class _Ubicacion_screen extends State<Ubicacion_screen> {
+  double Lat = 4.7006648;
+  double Long = -74.0344053;
+
   @override
   Widget build(BuildContext context) {
     List<Dog> dogs = DogManager().getDogs();
@@ -39,9 +51,20 @@ class Ubicacion_screen extends StatelessWidget {
               //API DE GOOGLE MAPS
               Container(
                 width: 700,
-                height: 370,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
+                height: 470.5,
+                child:
+                  Lat == null
+                    ? const Center(child: Text("Loading"))
+                    : GoogleMap(
+                  initialCameraPosition: CameraPosition(
+                    target: LatLng(Lat, Long),
+                    zoom: 10,
+                  ),
+                  markers: {
+                    Marker(
+                        markerId: const MarkerId("Ubicacion"),
+                        position: LatLng(Lat, Long))
+                  },
                 ),
               ),
 

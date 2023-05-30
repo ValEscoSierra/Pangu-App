@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "420124916355",
+    "firebase_url": "https://pangu-b5798-default-rtdb.firebaseio.com",
+    "project_id": "pangu-b5798",
+    "storage_bucket": "pangu-b5798.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420124916355:android:51224238ca31a93156b9b6",
+        "android_client_info": {
+          "package_name": "com.example.mapas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA621ncV2gDTPuBbQdRmNF3NuwMQD7xu5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420124916355:android:ddabab91930ca14b56b9b6",
+        "android_client_info": {
+          "package_name": "com.example.pangu_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA621ncV2gDTPuBbQdRmNF3NuwMQD7xu5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420124916355:android:d2ec1459aeccdee356b9b6",
+        "android_client_info": {
+          "package_name": "com.example.prueba_mapa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA621ncV2gDTPuBbQdRmNF3NuwMQD7xu5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

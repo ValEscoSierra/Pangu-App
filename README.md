@@ -26,7 +26,6 @@ PanguApp es compatible con dispositivos móviles iOS y Android, lo que te permit
 - Mauren Rivera
 - Gianluca Gramegna
 
-
 ## Licencia ⚖️
 PanguApp se distribuye bajo la licencia MIT. Consulta el archivo LICENSE para obtener más información.
 
