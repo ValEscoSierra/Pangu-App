@@ -99,7 +99,7 @@ class _DetallePerro_screen extends State<DetallePerro_screen> {
                     : GoogleMap(
                   initialCameraPosition: CameraPosition(
                     target: LatLng(Lat, Long),
-                    zoom: 10,
+                    zoom: 20,
                   ),
                   markers: {
                     Marker(

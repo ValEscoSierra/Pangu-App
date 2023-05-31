@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:i_am_rich/screens/detalleMonitoreo_screen.dart';
 import 'package:i_am_rich/screens/detallePerro_screen.dart';
@@ -21,7 +22,9 @@ import 'screens/pruebaMapa_screen.dart';
 import 'screens/dog.dart';
 import 'screens/detalleMonitoreo_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
