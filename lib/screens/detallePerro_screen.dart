@@ -39,7 +39,7 @@ class _DetallePerro_screen extends State<DetallePerro_screen> {
         googleMapController.animateCamera(
             CameraUpdate.newCameraPosition(
                 CameraPosition(
-                    zoom: 13.5,
+                    zoom: 140,
                     target: LatLng(Lat, Long)
                 )
             )
@@ -99,7 +99,7 @@ class _DetallePerro_screen extends State<DetallePerro_screen> {
                     : GoogleMap(
                   initialCameraPosition: CameraPosition(
                     target: LatLng(Lat, Long),
-                    zoom: 20,
+                    zoom: 140,
                   ),
                   markers: {
                     Marker(
