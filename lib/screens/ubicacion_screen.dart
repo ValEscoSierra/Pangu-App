@@ -51,21 +51,20 @@ class _Ubicacion_screen extends State<Ubicacion_screen> {
               //API DE GOOGLE MAPS
               Container(
                 width: 700,
-                height: 470.5,
-                child:
-                  Lat == null
+                height: 370,
+                child: Lat == null
                     ? const Center(child: Text("Loading"))
                     : GoogleMap(
-                  initialCameraPosition: CameraPosition(
-                    target: LatLng(Lat, Long),
-                    zoom: 10,
-                  ),
-                  markers: {
-                    Marker(
-                        markerId: const MarkerId("Ubicacion"),
-                        position: LatLng(Lat, Long))
-                  },
-                ),
+                        initialCameraPosition: CameraPosition(
+                          target: LatLng(Lat, Long),
+                          zoom: 10,
+                        ),
+                        markers: {
+                          Marker(
+                              markerId: const MarkerId("Ubicacion"),
+                              position: LatLng(Lat, Long))
+                        },
+                      ),
               ),
 
               //PERROS Y SUS ESTADOS
@@ -73,10 +72,6 @@ class _Ubicacion_screen extends State<Ubicacion_screen> {
                 width: 700,
                 height: 193.3,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
                   color: Colors.white,
                 ),
                 child: Padding(

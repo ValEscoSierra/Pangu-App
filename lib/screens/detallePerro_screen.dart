@@ -36,16 +36,10 @@ class _DetallePerro_screen extends State<DetallePerro_screen> {
         Lat = double.parse(latitud);
         Long = double.parse(longitud);
 
-        googleMapController.animateCamera(
-            CameraUpdate.newCameraPosition(
-                CameraPosition(
-                    zoom: 140,
-                    target: LatLng(Lat, Long)
-                )
-            )
-        );
+        googleMapController.animateCamera(CameraUpdate.newCameraPosition(
+            CameraPosition(zoom: 140, target: LatLng(Lat, Long))));
 
-        setState(() { });
+        setState(() {});
       }
     });
   }
@@ -92,24 +86,23 @@ class _DetallePerro_screen extends State<DetallePerro_screen> {
               //API DE GOOGLE MAPS
               Container(
                 width: 700,
-                height: 441,
-                child:
-                Lat == null
+                height: 340.3,
+                child: Lat == null
                     ? const Center(child: Text("Loading"))
                     : GoogleMap(
-                  initialCameraPosition: CameraPosition(
-                    target: LatLng(Lat, Long),
-                    zoom: 140,
-                  ),
-                  markers: {
-                    Marker(
-                        markerId: const MarkerId("Ubicacion"),
-                        position: LatLng(Lat, Long))
-                  },
-                  onMapCreated: (MapController){
-                    _controller.complete(MapController);
-                  },
-                ),
+                        initialCameraPosition: CameraPosition(
+                          target: LatLng(Lat, Long),
+                          zoom: 140,
+                        ),
+                        markers: {
+                          Marker(
+                              markerId: const MarkerId("Ubicacion"),
+                              position: LatLng(Lat, Long))
+                        },
+                        onMapCreated: (MapController) {
+                          _controller.complete(MapController);
+                        },
+                      ),
               ),
 
               //PERROS Y SUS ESTADOS
@@ -117,10 +110,6 @@ class _DetallePerro_screen extends State<DetallePerro_screen> {
                 width: 700,
                 height: 223,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
                   color: Colors.white,
                 ),
                 child: Padding(
